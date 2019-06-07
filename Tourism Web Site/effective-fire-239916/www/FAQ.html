@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<title> FAQs | Explore Srilanka</title>
+  <style>
+  body{
+    background: linear-gradient(rgba(0,0,0,0.50), rgba(0, 0, 0, 0.80)), url('Images/activity bg.jpg');
+    }
+  ul{margin-left: 50px;}
+  li{color: white;
+    
+  
+}
+  hr{height: 0.1;}
+  .p{
+	font-size: 20px;
+    font-family:Noteworthy;
+    margin-left: 100px;
+    margin-right: 100px;
+    color:white;
+}
+h2
+{
+  color:white;
+  text-decoration: none;
+
+
+}
+  </style>
+  <script>
+
+    var previousScrollPosition = window.pageYOffset;
+
+    window.onscroll = function() {
+      var currentScrollPosition = window.pageYOffset;
+      if(previousScrollPosition>currentScrollPosition) {
+        var navBar = document.getElementById("nav");
+        navBar.style.top = "0";
+        navBar.style.backgroundColor = "rgba(16,15,13,0.87)";
+      }else {
+        document.getElementById("nav").style.top = "-90px";
+      }
+      previousScrollPosition = currentScrollPosition;
+
+
+    }
+  </script>
+</head>
+<body>
+  <!--Naviagtion bar-->
+    <header>
+		<nav class="navbar" id="nav">
+			<img src="images/logo.png" class="navIcon">
+			<a href="javascript:void(0);" class="icon" style="padding: 0;" onclick="Resize()">
+				<i class="fa fa-bars"></i>
+			</a>
+			<div class="navTxtContainer">
+				<a href="index.html">HOME</a>
+				<a href="Destinations.html">DESTINATIONS</a>
+				<a href="Activities.html">ACTIVITIES</a>
+				<a href="BuyItems.html">PRODUCTS</a>
+				<a href="Thumbnails.html">GALLERY</a>
+				<a href="QuizFrontPage.html">QUIZ</a>
+				<div class="aboutUs">
+					<button class="aboutUsBtn">ABOUT US</button>
+					<div class="aboutUs-content">
+						<a href="CVRavindu.html">STUDENT 1</a>
+						<a href="CVSaneth.html">STUDENT 2</a>
+						<a href="CVAzmira.html">STUDENT 3</a>
+						<a href="CVNatasha.html">STUDENT 4</a>
+					</div>
+				</div>
+				<a href="contactUs.html">CONTACT US</a>
+			</div>
+		</nav>
+	</header>
+
+  <hr color="cyan" style="margin-top:100px;">
+  <h2 align="center">FAQ Help-Sri Lanka </h2>
+  <hr color="cyan"><br>
+  <h2 style="margin-left: 50px;">Frequently Asked Questions</h2><br>
+  <ul>
+    <li>Where is Sri Lanka Situated</li>
+    <p class="p">
+      It's in the South-east region of Asia. Just below India a tear drop
+      shaped island is Sri Lanka. Sri Lanka lies between the northern
+      latitudes 5° 55. and 9° 55. and the eastern longitudes 79° 42. and
+       81° 52., 650km north of the equator.</p><br>
+       <li>Is Sri Lanka and Ceylon the same country?</li>
+       <p class="p">
+         It is the same country, The name Ceylon was given
+         by the british and was used until 1972 after which Sri Lanka
+          was and still is used.
+       </p><br>
+       <li>Will visiting Sri Lanka worth my time?</li>
+       <p class="p">
+         Absolutely, it is one of the best places to visit, Sri Lankan
+         is now considered as one of the best places to have a vaction at.
+       </p><br>
+       <li>The Best time to visit Sri Lanka</li>
+       <p class="p">
+         Sri Lanka is tropical country with almost the same all year long
+          except for monsoon seasons kicking off at different times during
+          the year, despite showers a warm sunny climate is always guranteed.
+       </p>
+	</ul>
+       <!--Footer-->
+       <footer>
+		<div class="footer-grid">
+			<img src="images/logo.png" class="footerIcon" alt="logo">
+			<div class="siteMap">
+				<ul type="none">
+					<li><a href="SiteMap.html" class="title"><strong>SiteMap</strong></a></li><br>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="Destinations.html">Destinations</a></li>
+					<li><a href="Activities.html">Activities</a></li>
+					<li><a href="BuyItems.html">Products</a></li>
+					<li><a href="QuizFrontPage.html">Quiz</a></li>
+					<li><a href="Student Details.html">About Us</a></li>
+					<li><a href="contactUs.html">Contact Us</a></li>
+					<li><a href="FAQ.html">F.A.Q</a></li>
+				</ul>
+			</div>
+			<div class="aboutSite">
+			  <p class="footer-title"><strong>About Our Site</strong></p>
+			  <p class="footer-description">This is a protoype we designed for Web Design and Development CourseWork. This website includes tourist attractions in Sri Lanka, with thier images and details and we help you to enjoy your vacation. And also you can buy best quality srilankan products for the lowest price from our website.</p>
+			</div>
+			<div class="contactInfo">
+				<p class="footer-title"><strong>Contact Info</strong></p>
+				<p class="footer-description">
+					+94 67 123 4567<br><br>
+					<strong>Explore Srilanka</strong><br><br>
+					Street Name,<br>
+					Colombo,<br>
+					Srilanka
+				</p>
+			</div>
+		</div>
+		<hr size="1" width="90%">
+		<div class="socialBtn-container">
+			<a href="#" class="fa fa-facebook"></a>
+			<a href="#" class="fa fa-twitter"></a>
+			<a href="#" class="fa fa-google"></a>
+		</div>
+		<hr size="1" width="90%">
+		<a href="CVNatasha.html" class="editor">Natasha Bharathi</a>
+	</footer>
+</body>
+</html>

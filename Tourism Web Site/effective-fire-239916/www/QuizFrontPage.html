@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Front Page</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--common css-->
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <!--google font links-->
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Galada" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arsenal" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Basic" rel="stylesheet">
+	
+
+    <style>
+        #heading{
+        font-family: 'Amatic SC', cursive;
+        font-size:60px;
+        }
+
+        .background{
+        background-image: url(gsea.jfif);
+        background-repeat: no-repeat;
+        }
+
+        .transBox {
+        background-color: #ffffff;
+        border: 10px solid #85C1E9;
+        opacity: 0.8;
+        filter: alpha(opacity=80);
+        border-radius: 30px;
+        margin : 130px 300px 10px 300px;
+        }
+
+        .ul{
+        font-family: 'Arsenal', sans-serif;
+        font-size:25px;
+        color: #2E2E2E;
+        margin-left: 30px;
+        margin-right:30px;
+        font-weight: bold;
+        }
+
+        h1{
+        text-align: center;
+        }
+
+        .button {
+        background-color: #85C1E9;
+        border: 3px solid #2471A3;
+        border-radius:30px;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block; /*to display as a block inside the div*/
+        font-size: 20px;
+        margin-left: 40%;
+        margin-bottom: 20px;
+        cursor: pointer;
+        font-family: 'Basic', sans-serif;
+        font-weight:bold;
+        }
+
+        .wish{
+        color:#3498DB;
+        font-family: 'Cookie', cursive;
+        font-size:40px;
+        }
+
+        #myCV{
+        font-size:20px;
+        }
+    </style>
+</head>
+<body class="background">
+<!--navigation bar- common css-->
+	<header>
+		<nav class="navbar" id="nav">
+			<img src="images/logo.png" class="navIcon">
+			<a href="javascript:void(0);" class="icon" style="padding: 0;" onclick="Resize()">
+				<i class="fa fa-bars"></i>
+			</a>
+			<div class="navTxtContainer">
+				<a href="index.html">HOME</a>
+				<a href="Destinations.html">DESTINATIONS</a>
+				<a href="Activities.html">ACTIVITIES</a>
+				<a href="BuyItems.html">PRODUCTS</a>
+				<a href="Thumbnails.html">GALLERY</a>
+				<a class="active" href="QuizFrontPage.html">QUIZ</a>
+				<div class="aboutUs">
+					<button class="aboutUsBtn">ABOUT US</button>
+					<div class="aboutUs-content">
+						<a href="CVRavindu.html">STUDENT 1</a>
+						<a href="CVSaneth.html">STUDENT 2</a>
+						<a href="CVAzmira.html">STUDENT 3</a>
+						<a href="CVNatasha.html">STUDENT 4</a>
+					</div>
+				</div>
+				<a href="contactUs.html">CONTACT US</a>
+			</div>
+		</nav>
+	</header>
+
+<!--Page Content-->
+<div class="transBox">
+    <h1 id="heading"><b> THE QUIZ.</b></h1>
+    <ul class="ul">
+        <li> Here is a simple quiz to check your knowledge about Sri Lanka.</li>
+        <li> This is a time based quiz and you will get 3 minutes to complete the quiz. </li>
+        <li> There are 10 questions in this quiz. </li>
+        <li>You will be awarded marks as to your performance at the end of the quiz.</li>
+        <li> Click the start button if you are ready to start the quiz. </li>
+    </ul>
+    <p align="center" class="wish"> Best of luck for your quiz. </p>
+    <a href="The Quiz.html" class="button">S t a r t</a>
+</div>
+
+<!--footer - common css-->
+	<footer>
+		<div class="footer-grid">
+			<img src="images/logo.png" class="footerIcon" alt="logo">
+			<div class="siteMap">
+				<ul type="none">
+					<li><a href="SiteMap.html" class="title"><strong>SiteMap</strong></a></li><br>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="Destinations.html">Destinations</a></li>
+					<li><a href="Activities.html">Activities</a></li>
+					<li><a href="BuyItems.html">Products</a></li>
+					<li><a href="QuizFrontPage.html">Quiz</a></li>
+					<li><a href="Student Details.html">About Us</a></li>
+					<li><a href="contactUs.html">Contact Us</a></li>
+					<li><a href="FAQ.html">F.A.Q</a></li>
+				</ul>
+			</div>
+			<div class="aboutSite">
+			  <p class="footer-title"><strong>About Our Site</strong></p>
+			  <p class="footer-description">This is a protoype we designed for Web Design and Development CourseWork. This website includes tourist attractions in Sri Lanka, with thier images and details and we help you to enjoy your vacation. And also you can buy best quality srilankan products for the lowest price from our website.</p>
+			</div>
+			<div class="contactInfo">
+				<p class="footer-title"><strong>Contact Info</strong></p>
+				<p class="footer-description">
+					+94 67 123 4567<br><br>
+					<strong>Explore Srilanka</strong><br><br>
+					Street Name,<br>
+					Colombo,<br>
+					Srilanka
+				</p>
+			</div>
+		</div>
+		<hr size="1" width="90%">
+		<div class="socialBtn-container">
+			<a href="#" class="fa fa-facebook"></a>
+			<a href="#" class="fa fa-twitter"></a>
+			<a href="#" class="fa fa-google"></a>
+		</div>
+		<hr size="1" width="90%">
+		<a href="CVAzmira.html" class="editor">Azmira Mubarak</a>
+	</footer>
+
+
+</body>
+</html>

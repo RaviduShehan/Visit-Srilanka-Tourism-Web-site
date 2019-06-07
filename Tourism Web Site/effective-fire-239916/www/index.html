@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Carter One|Poiret One|Raleway:b|Overlock' rel='stylesheet'>
+	<link rel="stylesheet" href="css/styles.css">
+	<style>
+	#mainImg {
+	width: 100%
+	}
+	
+	#mainImageContainer {
+		position: relative;
+	}
+	#mainImageText {
+		position: absolute;
+		width: auto;
+		top: 38%;
+		left: 5%;
+	}
+
+	#headerTitle {
+		font-family: 'Raleway';
+		letter-spacing: 5px;
+		color: white;
+		font-size:50px;
+	}
+	
+	#headerSubTitle {
+		font-family: 'Poiret One';
+		letter-spacing: 5px;
+		color: white;
+		font-size:30px;
+		margin-top: -50px;
+	}
+	#buttonEx {
+		
+		display: block;
+		color: #181910;
+		padding: 14px 30px;
+		background-color: rgba(240,201,50,0.80);
+	}
+	#buttonEx:hover {
+		background-color: rgba(240,201,50,1);
+	}
+	
+	
+	.popDestGrid {
+		display: grid;
+		grid-template-columns: 23.5vw 23.5vw 23.5vw 23.5vw;
+		grid-template-rows: auto;
+		grid-column-gap: 0.4vw;
+		width: 95.2vw;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
+	}
+	.popularDestImg {
+		width: 100%;
+		
+	}
+	.popDestContainer {
+		border: solid 1px #C0C0C0;
+		width:100%;
+		height: auto;
+		padding-bottom: 30px;
+	}
+	
+	.popActGrid {
+		display: grid;
+		position: relative;
+		grid-template-columns: 31vw 31vw 31vw;
+		grid-template-rows: auto;
+		grid-column-gap: 0.5vw;
+		grid-row-gap: 0.5vw;
+		width: 94vw;
+		margin-left: auto;
+		margin-right: auto;
+		
+	}
+	
+	.popActImg {
+		width: 100%;
+	}
+	
+	@media screen and (max-width: 800px) {
+		.popDestGrid {
+		display: block;
+		width: 100%;
+		margin: auto;
+		
+	}
+	
+	.popularDestImg {
+		margin: auto;
+		
+	}
+	.popDestContainer {
+		width: 95%;
+		margin: auto;
+		
+	}
+	.popActGrid {
+		display: block;
+		width: 100%;
+		margin: auto;
+	}
+	#mainImg {
+		width: 150%;
+		float: right;
+	}
+	#mainImageText {
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 80px;
+	}
+
+	}
+
+	#popDestTitle {
+		font-family: 'Raleway';
+		grid-column-start: 1;
+		grid-column-end: 5;
+		
+	}
+	
+	#popActTitle {
+		font-family: 'Raleway';
+		grid-column-start: 1;
+		grid-column-end: 4;
+	}
+	.title {
+		font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+		color: #222222;
+		font-size: 24px;
+		padding: 40px 0;
+		text-align: center;
+	}
+	.destTitle {
+		font-family: 'Raleway';
+		color: #838383;
+		font-size: 20px;
+	}
+
+	.popDestContainer:hover {
+		background-color: #F4F4F4;
+		margin-top: -5px;
+	}
+	.popDestDescription {
+		font-family: 'Overlock';
+		font-size: 17px;
+		width: 90%;
+		margin: 0 auto;
+		text-align: center;
+		color: #737373;
+	}
+	.title_shadow {
+		background: linear-gradient(to right, rgba(0,0,0,0.00), rgba(41,41,41,1.00));
+		width: 350px;
+		height: auto;
+		float: right;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		
+	}
+		
+		.desc_shadow {
+		visibility: hidden;
+		background: linear-gradient(to right, rgba(0,0,0,0.70), rgba(41,41,41,1.00));
+		width: 100%;
+		height: 100%;
+		float: left;
+		position: absolute;
+		top: 0;
+		
+	}
+	.activity_title {
+		color: white;
+		font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+		padding: 1px 15px;
+		float: right;
+		font-size: 20px;
+	}
+	
+		.act_desc {
+			font-size: 18px;
+			color: white;
+			float: left;
+			padding: 0 30px;
+			font-family: 'Raleway';
+		}
+		
+		
+		/*hover effects for popular activity section*/
+		
+		#hikingWrapper:hover #hikingTxtWrapper  {
+			visibility: hidden;
+		}
+		#hikingWrapper:hover #hikingDescWrapper {
+			visibility: visible;
+		}
+		
+		#safariWrapper:hover #safariTxtWrapper  {
+			visibility: hidden;
+		}
+		#safariWrapper:hover #safariDescWrapper {
+			visibility: visible;
+		}
+		
+		#whaleWatchWrapper:hover #whaleWatchTxtWrapper  {
+			visibility: hidden;
+		}
+		#whaleWatchWrapper:hover #whaleWatchDescWrapper {
+			visibility: visible;
+		}
+		
+		#balloningWrapper:hover #balloningTxtWrapper  {
+			visibility: hidden;
+		}
+		#balloningWrapper:hover #balloningDescWrapper {
+			visibility: visible;
+		}
+		
+		#divingWrapper:hover #divingTxtWrapper  {
+			visibility: hidden;
+		}
+		#divingWrapper:hover #divingDescWrapper {
+			visibility: visible;
+		}
+		
+		#raftingWrapper:hover #raftingTxtWrapper  {
+			visibility: hidden;
+		}
+		#raftingWrapper:hover #raftingDescWrapper {
+			visibility: visible;
+		}
+		
+		
+	</style>
+	<script>
+
+		var previousScrollPosition = window.pageYOffset;
+		
+		window.onscroll = function() {
+			var currentScrollPosition = window.pageYOffset;
+			if(previousScrollPosition>currentScrollPosition) {
+				var navBar = document.getElementById("nav");
+				navBar.style.top = "0";
+				navBar.style.backgroundColor = "rgba(16,15,13,0.87)";
+			}else {
+				document.getElementById("nav").style.top = "-90px";
+			}
+			previousScrollPosition = currentScrollPosition;
+			
+		
+		}
+		
+		function Resize() {
+    var x = document.getElementById("nav");
+    if (x.className === "navbar") {
+        x.className += " responsive";
+    } else {
+        x.className = "navbar";
+    }
+}
+	
+		function focusDest(){
+		document.getElementById("popDest").scrollIntoView();	
+		}
+		
+	</script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home | Explore Srilanka</title>
+</head>
+<body>
+<header>	
+	<div id="mainImageContainer">
+		<nav class="navbar" id="nav">
+			<img src="images/logo.png" class="navIcon">
+			<a href="javascript:void(0);" class="icon" style="padding: 0;" onclick="Resize()">
+				<i class="fa fa-bars"></i>
+			</a>
+			<div class="navTxtContainer">
+				<a class="active" href="index.html">HOME</a>
+				<a href="Destinations.html">DESTINATIONS</a>
+				<a href="Activities.html">ACTIVITIES</a>
+				<a href="BuyItems.html">PRODUCTS</a>
+				<a href="Thumbnails.html">GALLERY</a>
+				<a href="QuizFrontPage.html">QUIZ</a>
+				<div class="aboutUs">
+					<button class="aboutUsBtn">ABOUT US</button>
+					<div class="aboutUs-content">
+						<a href="CVRavindu.html">STUDENT 1</a>
+						<a href="CVSaneth.html">STUDENT 2</a>
+						<a href="CVAzmira.html">STUDENT 3</a>
+						<a href="CVNatasha.html">STUDENT 4</a>
+					</div>
+				</div>
+				<a href="contactUs.html">CONTACT US</a>
+			</div>
+		</nav>
+	
+	<img src="images/main img.png" id="mainImg">
+		<div id="mainImageText">
+		  <p id="headerTitle" align="center">Explore <strong>SRI LANKA</strong></p>
+		  <p id="headerSubTitle" align="center">The Heaven on Earth</p>
+		
+			<input class="largeBtn" id="buttonEx" type="button" name="Explore" value="EXPLORE" onClick="focusDest()">
+		</div>
+	</div>
+	</header>
+	<!--CSS Grid layout for popular destibations-->
+	<div class="popDestGrid" id="popDest">
+		<div class="title" id="popDestTitle"><p><strong>POPULAR DESTINATIONS</strong><p></div>
+		<!--Hill country section-->
+		<div class="popDestContainer">
+			<img src="images/hill country img.png" class="popularDestImg" id="hillCountryImg"><br>
+			<p class="destTitle" align="center"><b>HILL COUNTRY</b></p>
+			<div class="popDestDescription">Hill countries would not be more picturesque anywhere in the world; come view our spectacular parks, wade through unparalleled forests, climb the most dramatic hills and taste the most aromatic teas. From Sinharaja forest to Adam’s Peak to the cool breeze of Nuwara eliya – the hill country has much to offer the adventurous traveler in you!</div>
+		</div>
+		<!--Beaches section-->
+		<div class="popDestContainer">
+			<img src="images/beaches img.png" class="popularDestImg" id="beachesImg"><br>
+			<p class="destTitle" align="center"><b>BEACHES</b></p>
+			<div class="popDestDescription">Ah, the beach. Nothing more familiar to Sri Lanka than the sun, the sand and the beach. Sri Lanka gives you clear blue seas in Pasikudah situated east coast, to the more easily approachable beaches right here in Colombo. Beautiful beaches alongside rave parties await you in Unawatuna and Hikkaduwa so that you experience the sea as well as how we Sri Lankans party!</div>
+		</div>
+		<!--Commercial city section-->
+		<div class="popDestContainer">
+			<img src="images/city img.png" class="popularDestImg" id="comCityImg"><br>
+			<p class="destTitle" align="center"><b>COMMERCIAL CITY</b></p>
+			<div class="popDestDescription">Colombo, the heart and soul of Sri Lanka, is widely known to be the commercial capital even though Sri Jayawardana Pura Kotte is the statutory capital. Prominent landmarks in Colombo include Galle Face Green, Viharamahadevi Park, Beira Lake, Colombo Race Course, the Planetarium, Mount Lavinia beach as well as the National Museum. </div>
+		</div>
+		<!--Cultural section-->
+		<div class="popDestContainer">
+			<img src="images/cultural img.png" class="popularDestImg" id="culturalImg"><br>
+			<p class="destTitle" align="center"><b>CULTURAL</b></p>
+			<div class="popDestDescription">Visit Sri Lanka and you have a myriad of places to visit- including eight world heritage sites –the ancient city of Polonnaruwa, the ancient city of Sigiriya, the Golden Temple of Dambulla, the old town of Galle and its emplacements, the sacred city of Anuradhapura, the sacred city of Kandy, Sinharaja Forest Reserve and the Central Highlands of Sri Lanka.</div>
+		</div>
+		
+	</div>
+	
+	<!--CSS Grid layout for populat activities-->
+	<div id="actContainer" style="background-color: #e1e1e1; margin: 40px 0;">
+		<div class="popActGrid">
+			<p class="title" id="popActTitle"><strong>POPULAR ACTIVITIES</strong></p>
+			<!--Hiking section-->
+			<div id="hikingWrapper" style="position: relative;">
+				<img src="images/hiking img.png" class="popActImg">
+					<div id="hikingTxtWrapper" class="title_shadow">
+						<p class="activity_title"><strong>HIKING</strong></p>
+					</div>
+					<div id="hikingDescWrapper" class="desc_shadow">
+						<p class="activity_title" style="float: left; padding: 10px 30px;"><strong>HIKING</strong></p>
+						<p class="act_desc">With multitude of roads winding through expanding mountains, lush green forests, paddy fields, parks and sleepy villages, Sri Lanka offers a plethora of opportunities to the Keen hikers and trekkers.</p>
+					</div>
+			</div>
+			<!--Safari section-->
+			<div id="safariWrapper" style="position: relative;">
+				<img src="images/safari img.png" class="popActImg">
+					<div id="safariTxtWrapper" class="title_shadow">
+						<p class="activity_title"><strong>SAFARI</strong></p>
+					</div>
+					<div id="safariDescWrapper" class="desc_shadow">
+						<p class="activity_title" style="float: left; padding: 10px 30px;"><strong>SAFARI</strong></p>
+						<p class="act_desc">You'll certainly get to see all the wildlife and tropical birds you've never dreamed of seeing - including of course the famous but elusive Leopard, while at the same time taking in our natural brilliance of Sri Lanka, fauna and flora under clear skies.</p>
+					</div>
+			</div>
+			<!--Whale watching section-->
+			<div id="whaleWatchWrapper" style="position: relative;">
+				<img src="images/whale watching img.png" class="popActImg">
+				<div id="whaleWatchTxtWrapper" class="title_shadow">
+					<p class="activity_title"><strong>WHALE WATCHING</strong></p>
+				</div>
+				<div id="whaleWatchDescWrapper" class="desc_shadow">
+					<p class="activity_title" style="float: left; padding: 10px 30px;"><strong>WHALE WATCHING</strong></p>
+					<p class="act_desc">The ocean around Sri Lanka is the home to the gentle giants and the performers of the ocean. Dolphins and whales parade their presence at various locations around Sri Lanka during the months of December, January, February, March and April.</p>
+				</div>	
+			</div>
+			
+			<!--Hot air balloning section-->
+			<div id="balloningWrapper" style="position: relative;">
+				<img src="images/balloning img.png" class="popActImg">
+				<div id="balloningTxtWrapper" class="title_shadow">
+					<p class="activity_title"><strong>HOT AIR BALLONING</strong></p>
+				</div>
+				<div id="balloningDescWrapper" class="desc_shadow">
+					<p class="activity_title" style="float: left; padding: 10px 30px;"><strong>HOT AIR BALLONING</strong></p>
+					<p class="act_desc">Roam the skies of Sri Lanka enjoying the signs and sites from the heavens above. Floating at heights of 500 to 2000 feet on average,effortlessly drift over the treetops, wildlife, lakes and rivers, cultural sites, local urban homesteads and landmarks like Sigiriya Rock.</p>
+				</div>
+			</div>
+			<!--Diving section-->
+			<div id="divingWrapper" style="position: relative;">
+				<img src="images/diving img.png" class="popActImg">
+				<div id="divingTxtWrapper" class="title_shadow">
+					<p class="activity_title"><strong>DIVING</strong></p>
+				</div>
+				<div id="divingDescWrapper" class="desc_shadow">
+					<p class="activity_title" style="float: left; padding: 10px 30px;"><strong>DIVING</strong></p>
+					<p class="act_desc">Surrounded by the Indian Ocean with its coral gardens, multitudeof exotic fishes and ancient wrecks Sri Lanka offers one of the best diving experiences in the world. The colorful coral gardens along southern coasts and old and new ship wrecks around the Galle harbor and little and great basses are the favourite.</p>
+				</div>
+			</div>
+			<!--Water rafting section-->
+			<div id="raftingWrapper" style="position: relative;">
+				<img src="images/water rafting img.png" class="popActImg">
+				<div id="raftingTxtWrapper" class="title_shadow">
+					<p class="activity_title"><strong>WATER RAFTING</strong></p>
+				</div>
+				<div id="raftingDescWrapper" class="desc_shadow">
+					<p class="activity_title" style="float: left; padding: 10px 30px;"><strong>WATER RAFTING</strong></p>
+					<p class="act_desc">Experience White Water Rafting in the picturesque Kelani River, covering 5 major rapids and 4 minor rapids. This activity is for anyone above the age of 10 years with safety gear, modern rafts, and a comprehensive safety briefing will be given by our white water rafting instructors beforehand.</p>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	
+	<footer>
+		<div class="footer-grid">
+			<img src="images/logo.png" class="footerIcon" alt="logo">
+			<div class="siteMap">
+				<ul type="none">
+					<li><a href="SiteMap.html" class="title"><strong>SiteMap</strong></a></li><br>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="Destinations.html">Destinations</a></li>
+					<li><a href="Activities.html">Activities</a></li>
+					<li><a href="BuyItems.html">Products</a></li>
+					<li><a href="QuizFrontPage.html">Quiz</a></li>
+					<li><a href="Student Details.html">About Us</a></li>
+					<li><a href="contactUs.html">Contact Us</a></li>
+					<li><a href="FAQ.html">F.A.Q</a></li>
+				</ul>
+			</div>
+			<div class="aboutSite">
+			  <p class="footer-title"><strong>About Our Site</strong></p>
+			  <p class="footer-description">This is a protoype we designed for Web Design and Development CourseWork. This website includes tourist attractions in Sri Lanka, with thier images and details and we help you to enjoy your vacation. And also you can buy best quality srilankan products for the lowest price from our website.</p>
+			</div>
+			<div class="contactInfo">
+				<p class="footer-title"><strong>Contact Info</strong></p>
+				<p class="footer-description">
+					+94 67 123 4567<br><br>
+					<strong>Explore Srilanka</strong><br><br>
+					Street Name,<br>
+					Colombo,<br>
+					Srilanka
+				</p>
+			</div>
+		</div>
+		<hr size="1" width="90%">
+		<div class="socialBtn-container">
+			<a href="#" class="fa fa-facebook"></a>
+			<a href="#" class="fa fa-twitter"></a>
+			<a href="#" class="fa fa-google"></a>
+		</div>
+		<hr size="1" width="90%">
+		<a href="CVSaneth.html" class="editor">Saneth Induwara</a>
+	</footer>
+
+	
+</body>
+</html>

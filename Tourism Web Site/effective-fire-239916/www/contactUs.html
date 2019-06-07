@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/styles.css">
+
+	<style>
+		body {
+			background-color: #c7d9dd;
+		}
+		.imgWrapper {
+			width: 100%;
+			text-align: center;
+		}
+		#img{
+			width: 100%;
+		}
+		.txtOnMainImg {
+			color: #18444f;
+			position: absolute;
+			width: 100%;
+			display: block;
+			font-size: 58px;
+			font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+			top: 10%;
+			text-align: center;
+			
+			
+		}
+		.formTitle {
+			color: #606060 ;
+			font-size: 28px;
+			text-align: center
+		}
+		.inputField {
+			border: solid 1px #6F6F6F;
+			background-color: rgba(0,0,0,0.00);
+			border-radius: 3px;
+			padding-top: 15px;
+			padding-bottom: 15px;
+			padding-left: 12px;
+			padding-right: 3px;
+			font-size: 20px;
+			width: 600px;
+		}
+		.inputName {
+			width: 290px;
+		}
+		.formContainer {
+			display: grid;
+			grid-template-columns: 300px 300px;
+			grid-template-rows: auto;
+			grid-column-gap: 10px;
+			grid-row-gap: 10px;
+			width: 600px;
+			margin: 0 auto;
+		}
+		
+		#email, #mandatoryNote, #btnSend {
+			grid-column-start: 1;
+			grid-column-end: 3;
+		}
+		#btnSend:hover {
+			opacity: 0.8;
+		}
+		#comment {
+			grid-column-start: 1;
+			grid-column-end: 3;
+			height: 130px;
+
+		}
+		#rateUsText {
+			font-size: 24px;
+			color: rgba(79,79,79,1.00);
+			padding-top: 30px;
+			padding-bottom: 10px;
+			margin: auto;
+			grid-column-start: 1;
+			grid-column-end: 3;
+		}
+		.stars {
+  			width: 289px;
+ 			display: inline-block;
+			grid-column-start: 1;
+			grid-column-end: 3;
+			margin: auto;
+			padding-right: 80px;
+		}
+		/*hiding default radio buttons*/
+		input.star {
+			display: none;
+		}
+		label.star {
+			float: right;
+  			padding-left: 30px;
+  			font-size: 31px;
+  			transform: scale(2.3);
+  			color: #444;
+  			transition: all .2s;
+			text-shadow: 0 0 6px #434343;
+		}
+
+		input.star:checked ~ label.star:before {
+			content: '🟊';
+			color: #FD4;
+			transition: all .25s;
+		}
+		input.star-1:checked ~ label.star:before { color: #F62; }
+
+		label.star:hover { 
+			transform: rotate(-5deg) scale(2.6);
+			color: #E8CA45;
+		}
+
+		label.star:before {
+			content: '🟊';
+			font-family: FontAwesome;
+		}
+		#popup_msg {
+			padding-top: 20px;
+			padding-bottom: 20px;
+			text-align: center;
+			font-size: 20px;
+		}
+		#commentSuccess {
+			font-size: 25px;
+			text-align: center;
+			color:green;
+		}
+		#popupBtn {
+			display: block;
+			font-size: 22px;
+			border-radius: 40px;
+			padding: 15px 65px;
+			background-color: #044720;
+			color: white;
+			margin: 0 auto;
+		}
+
+	</style>
+	
+	<script>
+		
+		var name = "";
+		var email = "";
+		var comment = "";
+		
+		var previousScrollPosition = window.pageYOffset;
+		
+		window.onscroll = function() {
+			var currentScrollPosition = window.pageYOffset;
+			if(previousScrollPosition>currentScrollPosition) {
+				var navBar = document.getElementById("nav");
+				navBar.style.top = "0";
+				navBar.style.backgroundColor = "rgba(24, 68, 79, 0.85)";
+			}else {
+				document.getElementById("nav").style.top = "-90px";
+			}
+			previousScrollPosition = currentScrollPosition;
+			
+		
+		}
+		
+		function formValidation() {
+				
+			email = document.getElementById("email").value;
+			name = document.getElementById("fName").value;
+			comment = document.getElementById("comment").value;
+			
+			if(name==""){
+				alert("You haven't filled your First Name");
+				document.getElementById("fName").focus();
+				return false;
+			}
+			
+			
+			else if(email==""){
+				alert("You haven't filled your Email");
+				document.getElementById("email").focus();
+				return false;
+			}
+			
+			
+			else if(comment==""){
+				alert("You haven't typed any Comment");
+				document.getElementById("comment").focus();
+				return false;
+			}
+			
+			
+		}
+		
+		function getRating() {
+							
+			var form = document.getElementById("commentsForm");
+			var rate_val = form.elements["star"].value;
+			
+			return rate_val;
+		}
+		
+		function displayMessage() {
+			
+			formValidation();
+			
+			if(name=="" || email=="" || comment==""){
+			formValidation();
+			
+			}else{
+				var rating = getRating();
+				var msg =  "Dear " + name +", "+"Thank you very much for your feedback. You have rated our site as " + rating + " and your comment was \" " + comment +" \"";
+				var popup = document.getElementById("popup_msg");
+				popup.textContent = msg;
+				popup.style.visibility = "visible";
+				document.getElementById("popup").style.visibility = "visible";
+				
+				
+    		
+			}
+			return false;
+			
+		}
+		
+		function closePopup() {
+			document.getElementById("popup_msg").style.visibility = "hidden";
+			document.getElementById("popup").style.visibility = "hidden";
+			document.getElementById("commentsForm").reset();
+			name="";
+			email="";
+			comment="";
+		}
+		
+		function Resize() {
+			var x = document.getElementById("nav");
+			if (x.className === "navbar") {
+				x.className += " responsive";
+			} else {
+				x.className = "navbar";
+			}
+		}
+	
+		function focusDest(){
+		document.getElementById("popDest").scrollIntoView();	
+		}
+		<!-- font function is used to change the fontsize of the web page.We can chnage the fontsize from the slider bar-->
+var size;
+ function font(){
+  var x=document.getElementById('fontsize').value;
+  var y=document.getElementById('size');
+  y.style.fontSize=x+"px";
+  size=x;
+
+ }
+		
+	</script>
+<meta charset="utf-8">
+<title>Contact Us | Explore Srilanka</title>
+</head>
+
+<body>
+	<header class="imgWrapper">
+		<nav class="navbar" id="nav">
+			<img src="images/logo.png" class="navIcon">
+			<a href="javascript:void(0);" class="icon" style="padding: 0;" onclick="Resize()">
+				<i class="fa fa-bars"></i>
+ 			</a>
+  			<div class="navTxtContainer">
+				<a href="index.html">HOME</a>
+				<a href="Destinations.html">DESTINATIONS</a>
+				<a href="Activities.html">ACTIVITIES</a>
+				<a href="BuyItems.html">PRODUCTS</a>
+				<a href="Thumbnails.html">GALLERY</a>
+				<a href="QuizFrontPage.html">QUIZ</a>
+				<div class="aboutUs">
+					<button class="aboutUsBtn">ABOUT US</button>
+					<div class="aboutUs-content">
+						<a href="CVRavindu.html">STUDENT 1</a>
+						<a href="CVSaneth.html">STUDENT 2</a>
+						<a href="CVAzmira.html">STUDENT 3</a>
+						<a href="CVNatasha.html">STUDENT 4</a>
+					</div>
+				</div>
+				<a class="active" href="contactUs.html">CONTACT US</a>
+			</div>
+		</nav>
+		<img src="images/contact page img.png" id="img">
+
+		<div class="txtOnMainImg"><p><strong>We'd Like to Hear from You !</strong></p></div>
+	</header>
+	
+	<div id="size">
+		
+			<p class="formTitle"><strong>Contact Us</strong></p>
+		<form class="formContainer" id="commentsForm" onsubmit="return displayMessage()">
+			<input type="text" class="inputField inputName" id="fName" placeholder="First Name*">
+			<input type="text" class="inputField inputName" id="lName" placeholder="Last Name">
+			<input type="email" class="inputField" id="email" placeholder="Email*">
+			<textarea class="inputField" id="comment" placeholder="Comments*"></textarea>
+			<p id="rateUsText"><strong>Rate Us*</strong></p>
+			
+			<div  class="stars" id="user_rating">
+				<input class="star star-5" id="star[5]" type="radio" name="star" value="Excellent" checked/>
+    			<label class="star star-5" for="star[5]" title="Excellent"></label>
+    			<input class="star star-4" id="star[4]" type="radio" name="star" value="Good"/>
+    			<label class="star star-4" for="star[4]" title="Good"></label>
+    			<input class="star star-3" id="star[3]" type="radio" name="star" value="Fair"/>
+    			<label class="star star-3" for="star[3]" title="Fair"></label>
+    			<input class="star star-2" id="star[2]" type="radio" name="star" value="Poor"/>
+    			<label class="star star-2" for="star[2]" title="Poor"></label>
+    			<input class="star star-1" id="star[1]" type="radio" name="star" value="Very Poor"/>
+    			<label class="star star-1" for="star[1]" title="Very Poor"></label>		
+			</div>
+			<p id="mandatoryNote" style="color: #7E7E7E;" align="center">All fields marked with * are mandatory</p>
+			<input class="largeBtn" id="btnSend" type="submit" value="Send Message">
+		</form>
+		
+		<div id="popup" class="popup">
+		<div class="popupContent">
+		<hr>
+		<p id="commentSuccess"><strong>COMMENT SUCCESSFUL</strong></p>
+		<hr>
+			<div id="popup_msg"></div>
+			<input type="button" id="popupBtn" value="OK" onclick="closePopup()">
+		</div>	
+			<!--<input type="button" class="btn" value="OK">-->
+		</div>
+
+
+	
+	<div id="scale">
+			<span><label style="display:block;">Change Your fontSize here</label><input type="range" onmousemove="font();" id="fontsize" min="0" max="50" value="16" style="width:70%;" /></span>
+			</div>
+	</div>
+	
+	<footer>
+		<div class="footer-grid">
+			<img src="images/logo.png" class="footerIcon" alt="logo">
+			<div class="siteMap">
+				<ul type="none">
+					<li><a href="SiteMap.html" class="title"><strong>SiteMap</strong></a></li><br>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="Destinations.html">Destinations</a></li>
+					<li><a href="Activities.html">Activities</a></li>
+					<li><a href="BuyItems.html">Products</a></li>
+					<li><a href="QuizFrontPage.html">Quiz</a></li>
+					<li><a href="Student Details.html">About Us</a></li>
+					<li><a href="contactUs.html">Contact Us</a></li>
+					<li><a href="FAQ.html">F.A.Q</a></li>
+				</ul>
+			</div>
+			<div class="aboutSite">
+			  <p class="footer-title"><strong>About Our Site</strong></p>
+			  <p class="footer-description">This is a protoype we designed for Web Design and Development CourseWork. This website includes tourist attractions in Sri Lanka, with thier images and details and we help you to enjoy your vacation. And also you can buy best quality srilankan products for the lowest price from our website.</p>
+			</div>
+			<div class="contactInfo">
+				<p class="footer-title"><strong>Contact Info</strong></p>
+				<p class="footer-description">
+					+94 67 123 4567<br><br>
+					<strong>Explore Srilanka</strong><br><br>
+					Street Name,<br>
+					Colombo,<br>
+					Srilanka
+				</p>
+			</div>
+		</div>
+		<hr size="1" width="90%">
+		<div class="socialBtn-container">
+			<a href="#" class="fa fa-facebook"></a>
+			<a href="#" class="fa fa-twitter"></a>
+			<a href="#" class="fa fa-google"></a>
+		</div>
+		<hr size="1" width="90%">
+		<a href="CVSaneth.html" class="editor">Saneth Induwara</a>
+	</footer>
+</body>
+</html>

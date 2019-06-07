@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SiteMap | Explore Srilanka</title>
+  <style>
+
+  .anchor{
+	  display: block;
+    font-size: 18px;
+    text-decoration: none;
+    color:white;
+    text-align: center;
+	line-height: 50px;
+	  left: 0;
+    }
+    body{
+      background: rgba(15, 15, 25, 45);
+    }
+    h2{
+		display: block;
+      text-align: center;
+      color: white;
+      margin-top: 100px;
+      
+  }
+
+  
+  </style>
+  <!--javascript-->
+  	<script>
+
+  		var previousScrollPosition = window.pageYOffset;
+
+  		window.onscroll = function() {
+  			var currentScrollPosition = window.pageYOffset;
+  			if(previousScrollPosition>currentScrollPosition) {
+  				var navBar = document.getElementById("nav");
+  				navBar.style.top = "0";
+  				navBar.style.backgroundColor = "rgba(16,15,13,0.87)";
+  			}else {
+  				document.getElementById("nav").style.top = "-90px";
+  			}
+  			previousScrollPosition = currentScrollPosition;
+
+
+  		}
+      function Resize() {
+      var x = document.getElementById("nav");
+      if (x.className === "navbar") {
+          x.className += " responsive";
+      } else {
+          x.className = "navbar";
+      }
+  }
+
+  		function focusDest(){
+  		document.getElementById("popDest").scrollIntoView();
+  		}
+
+  	</script>
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <!--Naviagtion bar-->
+  <header>
+		<nav class="navbar" id="nav">
+			<img src="images/logo.png" class="navIcon">
+			<a href="javascript:void(0);" class="icon" style="padding: 0;" onclick="Resize()">
+				<i class="fa fa-bars"></i>
+			</a>
+			<div class="navTxtContainer">
+				<a href="index.html">HOME</a>
+				<a href="Destinations.html">DESTINATIONS</a>
+				<a href="Activities.html">ACTIVITIES</a>
+				<a href="BuyItems.html">PRODUCTS</a>
+				<a href="Thumbnails.html">GALLERY</a>
+				<a href="QuizFrontPage.html">QUIZ</a>
+				<div class="aboutUs">
+					<button class="aboutUsBtn">ABOUT US</button>
+					<div class="aboutUs-content">
+						<a href="CVRavindu.html">STUDENT 1</a>
+						<a href="CVSaneth.html">STUDENT 2</a>
+						<a href="CVAzmira.html">STUDENT 3</a>
+						<a href="CVNatasha.html">STUDENT 4</a>
+					</div>
+				</div>
+				<a href="contactUs.html">CONTACT US</a>
+			</div>
+		</nav>
+	</header>
+
+
+  <div>
+    <h2>SiteMap</h2>
+  </div>
+  <!--Sitemap-->
+<ul style="margin-left: 0; padding: 0;" type="none">
+  <li><a class="anchor"href="index.html">Home</li>
+  <li><a class="anchor"href="Destinations.html">Destinations</a></li>
+  <li><a class="anchor"href="Activities.html">Activities</a></li>
+  <li><a class="anchor"href="BuyItems.html">Products</a></li>
+  <li><a class="anchor"href="Thumbnails.html">Gallery</a></li>
+  <li><a class="anchor"href="QuizFrontPage.html">Quiz</a></li>
+  <li><a class="anchor"href="Student Details.html">About Us</a></li>
+  <li><a class="anchor"href="contactUs.html">Contact Us</a></li>
+  <li><a class="anchor"href="FAQ.html">F.A.Q</a></li>
+  <li><a class="anchor"href="SiteMap.html">SiteMap</a></li>
+</ul>
+<!--Footer-->
+	<footer>
+		<div class="footer-grid">
+			<img src="images/logo.png" class="footerIcon" alt="logo">
+			<div class="siteMap">
+				<ul type="none">
+					<li><a href="SiteMap.html" class="title"><strong>SiteMap</strong></a></li><br>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="Destinations.html">Destinations</a></li>
+					<li><a href="Activities.html">Activities</a></li>
+					<li><a href="BuyItems.html">Products</a></li>
+					<li><a href="QuizFrontPage.html">Quiz</a></li>
+					<li><a href="Student Details.html">About Us</a></li>
+					<li><a href="contactUs.html">Contact Us</a></li>
+					<li><a href="FAQ.html">F.A.Q</a></li>
+				</ul>
+			</div>
+			<div class="aboutSite">
+			  <p class="footer-title"><strong>About Our Site</strong></p>
+			  <p class="footer-description">This is a protoype we designed for Web Design and Development CourseWork. This website includes tourist attractions in Sri Lanka, with thier images and details and we help you to enjoy your vacation. And also you can buy best quality srilankan products for the lowest price from our website.</p>
+			</div>
+			<div class="contactInfo">
+				<p class="footer-title"><strong>Contact Info</strong></p>
+				<p class="footer-description">
+					+94 67 123 4567<br><br>
+					<strong>Explore Srilanka</strong><br><br>
+					Street Name,<br>
+					Colombo,<br>
+					Srilanka
+				</p>
+			</div>
+		</div>
+		<hr size="1" width="90%">
+		<div class="socialBtn-container">
+			<a href="#" class="fa fa-facebook"></a>
+			<a href="#" class="fa fa-twitter"></a>
+			<a href="#" class="fa fa-google"></a>
+		</div>
+		<hr size="1" width="90%">
+		<a href="CVNatasha.html" class="editor">Natasha Bharathi</a>
+	</footer>
+</body>
+</html>

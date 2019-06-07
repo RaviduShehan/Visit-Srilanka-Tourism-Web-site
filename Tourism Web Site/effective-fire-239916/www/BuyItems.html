@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/styles.css">
+
+
+  <script type="text/javascript">
+
+  <!-- validate the form inputs-->
+  function validation_form(thisform){
+var n=thisform.elements[0].value;
+var m=thisform.elements[1].value;
+var ad=thisform.elements[2].value;
+var pn=thisform.elements[3].value;
+
+    <!--after initializing the variables check the user has filled the dat,if not popup message to enter the relevent data -->
+ if (n==null||n==""){
+   alert('Please enter your name');
+   return
+  }
+ 
+  if(m.indexOf('@')==-1 || m.indexOf('.')==-1){
+    alert('problem with your Email,Please enter a valid email ');
+    return
+   }
+   if (ad==null||ad==""){
+   alert('Address is compulsory');
+   return
+  }
+
+  if (pn==null||pn==""){
+   alert('Phone number is compulsory');
+   return
+  }
+
+ <!--Display the popup message -->
+  DispWin = window.open('','NewWin', 'toolbar=no,status=no,width=700,height=200')
+  message = "Dear ," + document.input.yourname.value;
+  message += "</br>We will contact you through your email," + document.input.email.value;
+  message+="</br>Your given address is" + document.input.address.value;
+  message+="</br>And Your given Phone is" + document.input.phone.value;  
+  message+= "</br>Your total bill is $"+document.getElementById("finaltotal").innerHTML;
+  message+="</br> Thank you for your Order.We will send the items to your doorsteps withing 7 days.Keep connect with us."
+
+  DispWin.document.open()
+  DispWin.document.write(message);
+  DispWin.document.close();
+}
+
+<!--calculatintg the bill -->
+function doTotals() {
+    var product = ['mask_', 'spicies_', 'bathik_', 'handicraft_'];
+    var priceStr = 'price';
+    var quantityStr = 'quantity';
+    var subtotalStr = 'subtotal';
+    var total = 0;
+    for (var i = 0; i < product.length; i++) {    <!-- This array will get the user selection and that will calculate the total prices -->
+        var price = document.getElementById(product[i] + priceStr).value;
+        var quantity = document.getElementById(product[i] + quantityStr).value;
+        document.getElementById(product[i] + subtotalStr)
+            .innerHTML = parseInt(price) * parseInt(quantity);
+        total += price * quantity;
+    }
+    document.getElementById("finaltotal").innerHTML = total;
+}
+
+function setup() {
+    var lastCol = document.getElementById("subtotal_header");
+
+
+
+    var amounts = document.getElementsByTagName("select");
+    for(var i = 0; i < amounts.length; i++){
+        amounts[i].onchange = doTotals;
+    }
+
+
+}
+
+window.onload = setup;
+
+<!-- font function is used to change the fontsize of the web page.We can chnage the fontsize from the slider bar-->
+var size;
+ function font(){
+  var x=document.getElementById('fontsize').value;
+  var y=document.getElementById('size');
+  y.style.fontSize=x+"px";
+  size=x;
+
+ }
+
+</script>
+<style>
+body{
+  background-color:#CDE3E2;
+}
+table, th, td {
+
+   background:#7F8C8D;
+   padding: 50px;
+   width: 1000px;
+    border: 2px;
+    font-style: arial;
+}
+th, td {
+    padding: 20px;
+    text-align: left;
+    color:  white;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    font-size: 18px;
+}
+.head{
+  font-style: arial;
+
+}
+ 
+ <!--this tag control the size of the font size changing slider -->
+.scale{
+  width:80%;
+  height:10px;
+  color: black;
+  text-align: right;
+  line-height:40px;
+  boarder-radius:10px;
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  margin: auto;
+
+
+}
+
+.container{
+			color: black;
+			position: relative;
+			width: 100%;
+			display: block;
+			font-size: 20px;
+			font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+			margin-top: 130px;
+			text-align: center;
+			}
+.input{
+  display: block;
+  width: 25%;
+  color: blue;
+
+}
+</style>
+
+
+<title>Visit Srilanka: Gift Shop</title>
+</head>
+
+<body>
+  <!--navigation bar is creat to control the navigations of the website -->
+  	<header>
+		<nav class="navbar" id="nav">
+			<img src="images/logo.png" class="navIcon">
+			<a href="javascript:void(0);" class="icon" style="padding: 0;" onclick="Resize()">
+				<i class="fa fa-bars"></i>
+			</a>
+			<div class="navTxtContainer">
+				<a href="index.html">HOME</a>
+				<a href="Destinations.html">DESTINATIONS</a>
+				<a href="Activities.html">ACTIVITIES</a>
+				<a class="active" href="BuyItems.html">PRODUCTS</a>
+				<a href="Thumbnails.html">GALLERY</a>
+				<a href="QuizFrontPage.html">QUIZ</a>
+				<div class="aboutUs">
+					<button class="aboutUsBtn">ABOUT US</button>
+					<div class="aboutUs-content">
+						<a href="CVRavindu.html">STUDENT 1</a>
+						<a href="CVSaneth.html">STUDENT 2</a>
+						<a href="CVAzmira.html">STUDENT 3</a>
+						<a href="CVNatasha.html">STUDENT 4</a>
+					</div>
+				</div>
+				<a href="contactUs.html">CONTACT US</a>
+			</div>
+		</nav>
+	</header>
+<div class="container">
+  <div id="size">
+     <h2><b>Don't leave our site without getting your very own  souvenirs! </b></h2>
+      <p><b>Place your order here:<b></p>
+	  <p><b>You can select upto 10 items for each product </b></p>
+
+
+
+
+  <form name="products">
+  <table align="center">
+
+  <tr>
+<!--products are displayed in a table and user can select the amount of the product-->
+      <td><img src="images/mask.jpg" alt="Mask image" width="350" height="200"/></img></br><label for="mask_quantity"><b>Srilanka Mask</b></label></br>
+         <p>Price:$12<input type="hidden" id="mask_price" value="12.00"><br/>
+             <select id="mask_quantity" name="mask_quantity" size="1">
+			 
+			
+                   <option value="10">10</option>
+                   <option value="9">9</option>
+					<option value="8">8</option>
+					<option value="7">7</option>
+					<option value="6">6</option>
+					<option value="5">5</option>
+					<option value="4">4</option>
+					<option value="3">3</option>
+					<option value="2">2</option>
+					<option value="1">1</option>
+					<option value="0" selected>0</option>
+			</select>
+		</p>
+					<p>Total Amount :</p>
+					<p id="mask_subtotal"></p>
+	 </td>
+
+
+			<td><img src="images/spicies.jpg" alt="Spices image" width="350" height="200"/></img></br><label for="spicies_quantity"><b>Srilankan spicies</b></label></br>
+					<p>Price:$4<input type="hidden" id="spicies_price" value="4.00"><br/ >
+							<select id="spicies_quantity" name="spicies_quantity" size="1">
+								<option value="10">10</option>
+								<option value="9">9</option>
+								<option value="8">8</option>
+								<option value="7">7</option>
+								<option value="6">6</option>
+								<option value="5">5</option>
+								<option value="4">4</option>
+								<option value="3">3</option>
+								<option value="2">2</option>
+								<option value="1">1</option>
+								<option value="0" selected>0</option>
+							</select>
+					</p>
+							<p>Total Amount :</p>
+							<p id="spicies_subtotal"></p></td>
+	</tr>
+
+    <tr>
+
+		<td><img src="images/Bathik.jpg" alt="Bathik arts" width="350" height="200"/></img></br><label for="bathik_quantity"><b>Bathik Arts</b></label></br>
+		<p>Price:$12<input type="hidden" id="bathik_price" value="12.00"><br/ >
+						<select id="bathik_quantity" name="bathik_quantity" size="1">
+							<option value="10">10</option>
+							<option value="9">9</option>
+							<option value="8">8</option>
+							<option value="7">7</option>
+							<option value="6">6</option>
+							<option value="5">5</option>
+							<option value="4">4</option>
+							<option value="3">3</option>
+							<option value="2">2</option>
+							<option value="1">1</option>
+							<option value="0" selected>0</option>
+						</select>
+		</p>
+				<p>Total Amount :</p>
+				<p id="bathik_subtotal"></p></td>
+
+
+
+			<td><img src="images/handicraft.jpg" alt="Elephat statute" width="350" height="200" /></img></br><label for="handicraft_quantity"><b>Elephant Statue</b></label></br>
+			<p>Price:$10<input type="hidden" id="handicraft_price" value="10.00"><br/ >
+					<select id="handicraft_quantity" name="handicraft_quantity" size="1">
+						<option value="10">10</option>
+						<option value="9">9</option>
+						<option value="8">8</option>
+						<option value="7">7</option>
+						<option value="6">6</option>
+						<option value="5">5</option>
+						<option value="4">4</option>
+						<option value="3">3</option>
+						<option value="2">2</option>
+						<option value="1">1</option>
+						<option value="0" selected>0</option>
+					</select>
+		    </p>
+					<p>Total Amount :</p>
+					<p id="handicraft_subtotal"></p></td>
+  </tr>
+   
+     <tr id="tablefoot"><td>Total:</td><td colspan="2" id="totalerr"><td id="finaltotal" value="total" >0</td></tr>
+
+  </table>
+  </form>
+  <!--Form to get the details of the customer-->
+		<form name="input" method="post" onSubmit="validation_form(this)";>
+			<p><b>Name:</b> <input type="text" name="yourname" size="30" maxlength="30" value="">
+			
+			<p><b>Email: </b> <input type="text" name="email" size="30" maxlength="30" value="" id="email">
+			</p>
+			<p><b>Address:</b> <input TYPE="TEXT" SIZE="30" NAME="address" value="">
+			</p>
+			<p><b>Phone: </b> <input TYPE="TEXT" SIZE="30" NAME="phone" value="">
+			</p>
+			<div>
+               <p><input type="submit" name="submit" value="Submit"></p>
+
+               <input id="reset" type="reset" value="Reset Order"/>
+           </div>
+      </form>
+
+
+            <!--fontsize can change from here -->
+			<div id="scale">
+			<span><label style="display:block;">Change Your fontSize here</label><input type="range" onmousemove="font();" id="fontsize" min="0" max="50" value="16" style="width:70%;" /></span>
+			</div>
+
+</div>
+	</div>
+	<footer>
+		<div class="footer-grid">
+			<img src="images/logo.png" class="footerIcon" alt="logo">
+			<div class="siteMap">
+				<ul type="none">
+					<li><a href="SiteMap.html" class="title"><strong>SiteMap</strong></a></li><br>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="Destinations.html">Destinations</a></li>
+					<li><a href="Activities.html">Activities</a></li>
+					<li><a href="BuyItems.html">Products</a></li>
+					<li><a href="QuizFrontPage.html">Quiz</a></li>
+					<li><a href="Student Details.html">About Us</a></li>
+					<li><a href="contactUs.html">Contact Us</a></li>
+					<li><a href="FAQ.html">F.A.Q</a></li>
+				</ul>
+			</div>
+			<div class="aboutSite">
+			  <p class="footer-title"><strong>About Our Site</strong></p>
+			  <p class="footer-description">This is a protoype we designed for Web Design and Development CourseWork. This website includes tourist attractions in Sri Lanka, with thier images and details and we help you to enjoy your vacation. And also you can buy best quality srilankan products for the lowest price from our website.</p>
+			</div>
+			<div class="contactInfo">
+				<p class="footer-title"><strong>Contact Info</strong></p>
+				<p class="footer-description">
+					+94 67 123 4567<br><br>
+					<strong>Explore Srilanka</strong><br><br>
+					Street Name,<br>
+					Colombo,<br>
+					Srilanka
+				</p>
+			</div>
+		</div>
+		<hr size="1" width="90%">
+		<div class="socialBtn-container">
+			<a href="#" class="fa fa-facebook"></a>
+			<a href="#" class="fa fa-twitter"></a>
+			<a href="#" class="fa fa-google"></a>
+		</div>
+		<hr size="1" width="90%">
+		<a href="CVRavindu.html" class="editor">Ravindu Shehan</a>
+	</footer>
+</body>
+</html>

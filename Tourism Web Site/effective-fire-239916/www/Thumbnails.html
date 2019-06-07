@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<style type="text/css">
+.box {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+/* The grid: Four equal columns that floats next to each other */
+.column {
+
+    float: left;
+    width: 19%;
+    padding: 10px;
+    flex: 25%;
+
+  padding: 0 4px;
+}
+
+/* Style the images inside the grid */
+.column img {
+    opacity: 0.5;
+    cursor: pointer;
+    margin-top: 5px;
+  	vertical-align: middle;
+}
+
+.column img:hover {
+    opacity: 1;
+}
+/* Responsive layout - makes a two column-layout instead of four columns */
+
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    clear: both;
+    display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1;
+  width: 97%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+
+
+}
+.container{
+
+  position: 50px 50px;
+  display:Absolute;
+  position: center;
+  width: 100%;
+  max-width: 100%;
+}
+/* The expanding image container */
+.container:hover .overlay {
+
+    opacity: 1;
+
+}
+
+
+/* Expanding image text */
+#imgtext {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Closable button inside the expanded image */
+.closebtn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.img{
+  margin-left: 11px;
+  border:0px solid #ddd;
+border-radius:0%;
+padding:5px;
+width:500px;
+height:200px;}
+.img:hover{
+  box-shadow:0 0 0px 0px rgba(0,140,186,0.5);
+}
+#h2{
+  height:50px;
+  font-size:30px;
+  text-align: center;
+  line-height:50px;
+}
+.a{
+  color:white;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+
+</style>
+
+<script type="text/javascript">
+
+    var change;//variable for changing background color:
+
+    function changeColor(el) {
+  document.body.style.backgroundColor = el.value;
+}
+    colour();
+
+    var font;//variable for changing font color:
+
+    function fontColor(el){
+      document.body.style.color=el.value;
+    }
+    colour();
+
+    //using javascript for the description to appear over the images
+    function myFunction(imgs) {
+        var expandImg = document.getElementById("expandedImg");
+        var imgText = document.getElementById("imgtext");
+        expandImg.src = imgs.src;
+        imgText.innerHTML = imgs.alt;
+        expandImg.parentElement.style.display = "block";
+    }
+    var previousScrollPosition = window.pageYOffset;
+
+    window.onscroll = function() {
+      var currentScrollPosition = window.pageYOffset;
+      if(previousScrollPosition>currentScrollPosition) {
+        var navBar = document.getElementById("nav");
+        navBar.style.top = "0";
+        navBar.style.backgroundColor = "rgba(16,15,13,0.87)";
+      }else {
+        document.getElementById("nav").style.top = "-90px";
+      }
+      previousScrollPosition = currentScrollPosition;
+
+
+    }
+    function Resize() {
+    var x = document.getElementById("nav");
+    if (x.className === "navbar") {
+        x.className += " responsive";
+    } else {
+        x.className = "navbar";
+    }
+}
+
+    function focusDest(){
+    document.getElementById("popDest").scrollIntoView();
+    }
+
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Gallery | Explore Srilanka</title>
+</head>
+<body class="Tbody">
+  <!--Naviagtion bar-->
+    <header>
+		<nav class="navbar" id="nav">
+			<img src="images/logo.png" class="navIcon">
+			<a href="javascript:void(0);" class="icon" style="padding: 0;" onclick="Resize()">
+				<i class="fa fa-bars"></i>
+			</a>
+			<div class="navTxtContainer">
+				<a href="index.html">HOME</a>
+				<a href="Destinations.html">DESTINATIONS</a>
+				<a href="Activities.html">ACTIVITIES</a>
+				<a href="BuyItems.html">PRODUCTS</a>
+				<a class="active" href="Thumbnails.html">GALLERY</a>
+				<a href="QuizFrontPage.html">QUIZ</a>
+				<div class="aboutUs">
+					<button class="aboutUsBtn">ABOUT US</button>
+					<div class="aboutUs-content">
+						<a href="CVRavindu.html">STUDENT 1</a>
+						<a href="CVSaneth.html">STUDENT 2</a>
+						<a href="CVAzmira.html">STUDENT 3</a>
+						<a href="CVNatasha.html">STUDENT 4</a>
+					</div>
+				</div>
+				<a href="contactUs.html">CONTACT US</a>
+			</div>
+		</nav>
+	</header>
+
+
+
+<br><br><br>
+<!--Form used to change the changing colors because action attribute cannot be applied
+to other tags except form-->
+<form action="onchange(colour)" name="themes" method="post" class="box">
+  <p align="right" >
+    Change Page color:
+
+  <select name="colors" onchange="changeColor(this)">
+    <!--drop down list to change
+            background color-->
+  <option value="white" >White</option>
+  <option value="black">Black</option>
+  <option value="orange">Orange</option>
+  <option value="green">Green</option>
+  <option value="blue">Blue</option>
+  <option value="skyblue">Sky Blue</option>
+  <option value="pink">Pink</option>
+  <option value="yellow">Yellow</option>
+  <option value="mustard">Mustard</option>
+  <option value="maroon">Maroon</option>
+  <option value="magenta">Magenta</option>
+  <option value="cyan">Cyan</option>
+  <option value="gray">Gray</option>
+  <option value="seagreen">Sea Green</option>
+  <option value="chocolate">Chocolate</option>
+  <option value="fuchsia">Fuchsia</option>
+  <option value="gold">Gold</option>
+  <option value="khaki">Khaki</option>
+  <option value="silver">Silver</option>
+
+  </select>
+
+  &nbsp;&nbsp;
+  Change Font Colour:
+  <select name="colors" onchange="fontColor(this)">
+    <!--Drop down list to change font color-->
+      <option>Choose a color</option>
+      <option value="Black">Black</option>
+      <option value="White">White</option>
+      <option value="gray">Gray</option>
+      <option value="red">Red</option>
+      <option value="orange">Orange</option>
+      <option value="yellow">Yellow</option>
+      <option value="seagreen">Sea Green</option>
+      <option value="blue">Blue</option>
+      <option value="purple">Purple</option>
+  </select>
+  </p>
+  <!--Thumnail images-->
+<p id="h2" class="para"style="background: rgba(0, 0, 0.5, 0.5);"><b>Tourist attractions in Sri Lanka</b></p>
+        <div class="row" align="center" >
+        <div class="column">
+          <img class="img"src="images/SiteMapImages/Jayampathi-Lanka-Holidays-Best-Sri-Lankan-Tour-Agents-Beach-1.jpg" alt="<h3>Stilt Fishing</h3>Stilt Fishing is one of the most interesting
+          traditional fishing methods of Sri Lanka. Records indicate that it came into being just after World War II.
+          This mode of fishing was more widely used all along the coast until the tsunami in 2004 which caused such activities to cease
+          temporarily until recent years. The beautiful sight of fishermen perched branched poles as they fish skillfully during dawn, noon and dusk;
+          can now be commonly along the southern coast in towns such as Koggala, Kaththaluwa and Ahangama. Occasional stilt fishermen can also be
+          seen amongst the waters of Madu River, etc." onclick="myFunction(this);"style="width:100%">
+          <!--Using myFunction(this) to dispaly exapanded image-->
+        </div>
+
+        <div class="column">
+          <img class="img"src="images/SiteMapImages/Sri-Dalada-Maligawa.jpg" alt="<h3>The Temple of the Tooth-ශ්‍රී දළදා මාළිගාව</h3>Sri Dalada Maligawa or the Temple of the Sacred Tooth
+          Relic is a Buddhist temple in the city of Kandy, Sri Lanka. It is located in the royal palace complex of the former Kingdom of Kandy,
+          which houses the relic of the tooth of the Buddha. Since ancient times, the relic has played an important role in local politics because
+          it is believed that whoever holds the relic holds the governance of the country. Kandy was the last capital of the Sri Lankan kings and is a
+          World Heritage Site mainly due to the temple.Bhikkhus of the two chapters of Malwatte and Asgiriya conduct daily worship in the inner
+          chamber of the temple. Rituals are performed three times daily: at dawn, at noon and in the evenings. On Wednesdays there is a symbolic
+          bathing of the relic with an herbal preparation made from scented water and fragrant flowers called Nanumura Mangallaya. This holy water is
+          believed to contain healing powers and is distributed among those present."style="width:100%;S"onclick="myFunction(this);">
+        </div>
+
+            <div class="column">
+        <img class="img"src="images/Destinations/private-tour-yala-national.jpg" alt="<h3>Sri Lankan Leopard</h3>The Sri Lankan leopard (Panthera pardus kotiya) is a
+        leopard subspecies native to Sri Lanka that was first described in 1956 by the Sri Lankan zoologist Deraniyagala.The Sri Lankan leopard has a tawny
+        or rusty yellow coat with dark spots and close-set rosettes, which are smaller than in Indian leopards.The Sri Lankan leopard used to occur in
+        all habitats throughout the island. These habitat types can be broadly categorized into:
+        <ul>
+          <li>arid zone with <1,000 mm (39 in) rainfall;</li>
+          <li>dry zone with 1,000–2,000 mm (39–79 in) rainfall;</li>
+          <li>wet zone with >2,000 mm (79 in) rainfall. </li>
+        </ul>
+        "style="width:100%;"onclick="myFunction(this);">
+      </div>
+
+          <div class="column">
+          <img class="img"src="images/SiteMapImages/Wind Surfing - One HourN.png" alt="<h3>Wind Surfing</h3>
+          For a real wind-surfer\'s paradise, head down to BENTOTA on the south-west coast of Sri Lanka where the exhilaration of cruising across the azure water
+          overlooking the idyllic beach won't fail to disappoint. For beginners of windsurfing, the more tranquil waters of the Bentota river or any of Sri Lanka 's
+          many tanks and lakes offer an ideal training zone before heading out to the challenge of the ocean. North of TRINCOMALEE , in the west coast of Sri Lanka
+          , the sea off Nilaveli beach provides a fantastic east coast alternative for when the Yala monsoon brings strong winds and rough seas to the west. So
+           whatever your level of experience, leave your wetsuit at the door and make the most of what Sri Lanka has to offer this exciting sport."style="width:100%;"
+           onclick="myFunction(this);">
+        </div>
+
+            <div class="column">
+          <img class="img"src="images/SiteMapImages/ella-sri-lanka.jpg" alt="<h3>Ella</h3>Ella, often described as ‘’lonely
+          planet’’ and ‘’waterfall’’ is a congested town located in Sri Lanka. Ella is pure natural beauty, with its
+          waterfalls, greenery, and hills it is just jaw-dropping. It has views that one hasn’t witnessed before, scenes one hasn't seen before and nature
+          one hasn't felt before. Ella is the perfect place to go to if one wants to refresh the brain. It has many famous places and has been under the attention of
+           tourist for a decent amount of time now."style="width:100%;"onclick="myFunction(this);" align="center">
+        </div>
+      </div>
+
+  <div class="container" style="background:rgba(0, 0, 0, 0.5);">
+    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+    <div class="overlay" id="imgtext" align="center" ></div>
+    <center><img class="img"id="expandedImg" style="width:1500px;height:auto;"></center>
+    <div id="imgtext"></div>
+  </div>
+</form>
+<!--Footer-->
+	<footer>
+		<div class="footer-grid">
+			<img src="images/logo.png" class="footerIcon" alt="logo">
+			<div class="siteMap">
+				<ul type="none">
+					<li><a href="SiteMap.html" class="title"><strong>SiteMap</strong></a></li><br>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="Destinations.html">Destinations</a></li>
+					<li><a href="Activities.html">Activities</a></li>
+					<li><a href="BuyItems.html">Products</a></li>
+					<li><a href="QuizFrontPage.html">Quiz</a></li>
+					<li><a href="Student Details.html">About Us</a></li>
+					<li><a href="contactUs.html">Contact Us</a></li>
+					<li><a href="FAQ.html">F.A.Q</a></li>
+				</ul>
+			</div>
+			<div class="aboutSite">
+			  <p class="footer-title"><strong>About Our Site</strong></p>
+			  <p class="footer-description">This is a protoype we designed for Web Design and Development CourseWork. This website includes tourist attractions in Sri Lanka, with thier images and details and we help you to enjoy your vacation. And also you can buy best quality srilankan products for the lowest price from our website.</p>
+			</div>
+			<div class="contactInfo">
+				<p class="footer-title"><strong>Contact Info</strong></p>
+				<p class="footer-description">
+					+94 67 123 4567<br><br>
+					<strong>Explore Srilanka</strong><br><br>
+					Street Name,<br>
+					Colombo,<br>
+					Srilanka
+				</p>
+			</div>
+		</div>
+		<hr size="1" width="90%">
+		<div class="socialBtn-container">
+			<a href="#" class="fa fa-facebook"></a>
+			<a href="#" class="fa fa-twitter"></a>
+			<a href="#" class="fa fa-google"></a>
+		</div>
+		<hr size="1" width="90%">
+		<a href="CVNatasha.html" class="editor">Natasha Bharathi</a>
+	</footer>
+	  
+</body>
+</html>

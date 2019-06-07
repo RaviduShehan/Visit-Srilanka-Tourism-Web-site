@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Quiz</title>
+	
+    <!--common css-->
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <!--google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Hind+Madurai" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Hammersmith+One" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/quizStyle.css">
+    <!--css for the quiz-->
+    <script src="js/answerValidation.js"></script>
+    <!--javascript for the quiz-->
+    <script src="js/timer.js"></script>
+</head>
+<body>
+
+<!--Navigation Bar - Common CSS-->
+	<header>
+		<nav class="navbar" id="nav">
+			<img src="images/logo.png" class="navIcon">
+			<a href="javascript:void(0);" class="icon" style="padding: 0;" onclick="Resize()">
+				<i class="fa fa-bars"></i>
+			</a>
+			<div class="navTxtContainer">
+				<a href="index.html">HOME</a>
+				<a href="Destinations.html">DESTINATIONS</a>
+				<a href="Activities.html">ACTIVITIES</a>
+				<a href="BuyItems.html">PRODUCTS</a>
+				<a href="Thumbnails.html">GALLERY</a>
+				<a class="active" href="QuizFrontPage.html">QUIZ</a>
+				<div class="aboutUs">
+					<button class="aboutUsBtn">ABOUT US</button>
+					<div class="aboutUs-content">
+						<a href="CVRavindu.html">STUDENT 1</a>
+						<a href="CVSaneth.html">STUDENT 2</a>
+						<a href="CVAzmira.html">STUDENT 3</a>
+						<a href="CVNatasha.html">STUDENT 4</a>
+					</div>
+				</div>
+				<a href="contactUs.html">CONTACT US</a>
+			</div>
+		</nav>
+	</header>
+
+<!--Page Content-->
+<!-- div which displays the Time Left, Time Taken and the Total Marks-->
+	
+<div class="body">
+<div class="timer">
+    <p id="timer"></p>
+    <div id="feedback">
+        <p id="t"></p>
+        <p id="marks"></p>
+    </div>
+</div>
+
+<!--Quiz quick access buttons-->
+<div class="gridCol1">
+    <a class="button" href="#q1">Question 1</a>
+    <a class="button" href="#q2">Question 2</a>
+    <a class="button" href="#q3">Question 3</a>
+    <a class="button" href="#q4">Question 4</a>
+    <a class="button" href="#q5">Question 5</a>
+    <a class="button" href="#q6">Question 6</a>
+    <a class="button" href="#q7">Question 7</a>
+    <a class="button" href="#q8">Question 8</a>
+    <a class="button" href="#q9">Question 9</a>
+    <a class="button" href="#10">Question 10</a>
+</div>
+
+<!--Quiz Questions-->
+<div class="gridCol2">
+    <div class="qArea">
+    <p class="q" id="q1">01) What is the capital of Sri Lanka?</p>
+    <input name="q1" type="radio" id="ans1" >Sri jayawardhanapura<br>
+    <input name="q1" type="radio" >Colombo<br>
+    <input name="q1" type="radio" >Kandy
+    <p id="status1" class="q"></p>
+</div>
+
+<div class="qArea">
+    <p class="q" id="q2">02) What is the longest river in Sri Lanka?</p>
+    <input name="q2" type="radio">Cauvery<br>
+    <input name="q2" type="radio" >Padma<br>
+    <input name="q2" type="radio" id="ans2" >Mahaveli
+    <p id="status2" class="q"></p>
+</div>
+
+<div class="qArea">
+    <p class="q" id="q3">03) What is the highest point in Sri Lanka?</p>
+    <input name="q3" type="radio" id="ans3" >Piduruthalagala<br>
+    <input name="q3" type="radio" >Adam's Peak<br>
+    <input name="q3" type="radio" >Kirigalpotta
+    <p id="status3" class="q"></p>
+</div>
+
+<div class="qArea">
+    <p class="q" id="q4">04) What is the currency in Sri Lanka?</p>
+    <input name="q4" type="radio" >Doller<br>
+    <input name="q4" type="radio" >Rand<br>
+    <input name="q4" type="radio" id="ans4">Rupee
+    <p id="status4" class="q"></p>
+</div>
+
+<div class="qArea">
+    <p class="q" id="q5">05) What is the national sport in Sri Lanka?</p>
+    <input name="q5" type="radio" >Elle<br>
+    <input name="q5" type="radio" id="ans5">Vollyball<br>
+    <input name="q5" type="radio" >Chakgudu
+    <p id="status5" class="q"></p>
+</div>
+
+<div class="qArea">
+    <p class="q" id="q6">06) What is the calling code of Sri Lanka?</p>
+    <input name="q6" type="radio" >97<br>
+    <input name="q6" type="radio" id="ans6">94<br>
+    <input name="q6" type="radio" >49
+    <p id="status6" class="q"></p>
+</div>
+
+<div class="qArea">
+    <p class="q" id="q7">07) What is the tallest waterfall in Sri Lanaka?</p>
+    <input name="q7" type="radio" >Dunhida<br>
+    <input name="q7" type="radio" >Diyaluma<br>
+    <input name="q7" type="radio" id="ans7">Babarakanda
+    <p id="status7" class="q"></p>
+</div>
+
+<div class="qArea">
+    <p class="q" id="q8">08) Where is Sri Lanka located?</p>
+    <input name="q8" type="radio" id="ans8">South Asia<br>
+    <input name="q8" type="radio" >Central Asia<br>
+    <input name="q8" type="radio" >Middle East
+    <p id="status8" class="q"></p>
+</div>
+
+<div class="qArea">
+    <p class="q" id="q9">09) What kind of climate does Sri Lanka have?</p>
+    <input name="q9" type="radio" id="ans9">Tropical<br>
+    <input name="q9" type="radio" >Temperate<br>
+    <input name="q9" type="radio" >Arid
+    <p id="status9" class="q"></p>
+</div>
+
+<div class="qArea">
+    <p class="q" id="q10">10) Sri Lanaka is bordered by India and Pakistan?</p>
+    <input name="q10" type="radio" >True<br>
+    <input name="q10" type="radio" id="ans10">False
+    <p id="status10" class="q"></p>
+</div>
+
+    <!--Submit Button-->
+<button style="margin-top: 20px;" id="submit" class="button" onclick="myFunction()">Submit</button>
+</div>
+	</div>
+	
+</body>
+</html>
